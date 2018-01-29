@@ -1,0 +1,32 @@
+<form class="cadastro" name="myForm">
+  <fieldset class="cadastro">
+    <legend class="cadastro">Cadastro De Produto</legend>
+    <table class="cadastro">
+      <tr class="cadastro">
+        <th class="cadastro">Nome do produto:</th>
+        <td class="cadastro">
+          <input class="cadastro" type="text" name="nome"  (input)="nome = $event.target.value" placeholder="Nome" required>
+        </td>
+      </tr>
+      <tr class="cadastro">
+        <th class="cadastro">Preco do produto:</th>
+        <td class="cadastro">
+          <input class="cadastro" type="number" name="preco" (input)="preco = $event.target.value" placeholder="0.00" ng-pattern="^[0-9]+\.[0-9]{2}$" step="0.01"
+            required>
+        </td>
+      </tr>
+      <tr class="cadastro">
+        <th class="cadastro">Descricao do produto:</th>
+        <td class="cadastro">
+          <input class="cadastro" type="text" name="descricao" (input)="descricao = $event.target.value" placeholder="Descrição" required>
+        </td>
+      </tr>
+      <tr class="cadastro">
+        <td><p class="erro">{{ this.errorText }}</p><p>{{ this.sucesso }}</p></td>
+        <td class="cadastro">
+          <button class="cadastro" (click)="cadastrarProduto()">Cadastrar</button>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+</form>

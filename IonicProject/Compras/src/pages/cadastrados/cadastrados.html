@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>cadastrados</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-divider color="light">Itens</ion-item-divider>
+    <ion-item-sliding *ngFor="let produto of produtos; let i = index;">
+      <ion-item>
+        <h2>{{ produto.nome }}</h2>
+        <h5 class="rightSide">R${{ produto.preco.toFixed(2) }}</h5>
+        <p>{{ produto.descricao }} </p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="alertaDeExclusao(i)" color="danger">
+          <ion-icon name="remover"></ion-icon>
+          Remover
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-divider color="light"><h2 class="rightSide">Total: R${{ total.toFixed(2) }}</h2></ion-item-divider>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,17 @@
+ul.menu {
+  float: left;
+  margin-top: 15%;
+  width: 200px;
+  list-style-type: none;
+}
+
+li.menu {
+  height: 50px;
+  font-size: 18px;
+}
+
+.content {
+  text-align: center;
+  float: right;
+  width: 80%;
+}

@@ -1,0 +1,32 @@
+<table class="view" id="exportthis">
+  <tr class="view">
+    <th class="view">Nome</th>
+    <th class="view">Descrição</th>
+    <th class="view">Preço</th>
+    <th class="view">Remover</th>
+  </tr>
+  <tr class="view" *ngFor="let produto of produtos; let i = index;" >
+    <td class="view" *ngIf="i % 2 != 0" style="background-color:#f1f1f1">{{ produto.nome }}</td>
+    <td class="view" *ngIf="i % 2 == 0">{{ produto.nome }}</td>
+    <td class="view" *ngIf="i % 2 != 0" style="background-color:#f1f1f1">{{ produto.descricao }}</td>
+    <td class="view" *ngIf="i % 2 == 0">{{ produto.descricao }}</td>
+    <td class="view" *ngIf="i % 2 != 0" style="background-color:#f1f1f1">R${{ produto.preco.toFixed(2) }}</td>
+    <td class="view" *ngIf="i % 2 == 0">R${{ produto.preco.toFixed(2) }}</td>
+    <td class="view" *ngIf="i % 2 != 0" style="background-color:#f1f1f1">
+      <button class="view" (click)="removeItem(i)">Remover produto</button>
+    </td>
+    <td class="view" *ngIf="i % 2 == 0">
+      <button class="view" (click)="removeItem(i)">Remover produto</button>
+    </td>
+  </tr>
+  <tr>
+    <th class="view" colspan="2">Total</th>
+    <th class="view">R${{ total.toFixed(2) }}</th>
+    <th class="view">
+      <button class="export" (click)="exportDataXLSX()">Exportar XLS</button>
+      <button class="export" (click)="exportDataCSV()">Exportar CSV</button>
+      <button class="export" (click)="exportDataPDF()">Exportar PDF</button>
+    </th>
+  </tr>
+  <p class="erro">{{ this.mensagemErro }}</p>
+</table>
