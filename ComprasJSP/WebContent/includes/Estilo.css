@@ -1,0 +1,95 @@
+ul.menu {
+  float: left;
+  margin-top: 15%;
+  width: 200px;
+  list-style-type: none;
+}
+
+li.menu {
+  height: 50px;
+  font-size: 18px;
+}
+
+.content {
+  text-align: center;
+  float: right;
+  width: 80%;
+}
+
+fieldset.cadastro {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  border: 1px solid #999;
+  background-color: #fcfcfc;
+  width: 40%;
+}
+
+td.cadastro {
+  padding: 15px;
+  text-align: left;
+}
+
+th.cadastro {
+  padding: 15px;
+  text-align: left;
+}
+
+input.cadastro {
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  padding: 4px;
+}
+
+button.cadastro {
+  border-style: solid;
+  border-width: 1px;
+  padding: 6px;
+  background-color: #eee;
+}
+
+table.view {
+  width: 76%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  border-collapse: collapse;
+}
+
+td.view {
+  border: 1px solid #999;
+  padding: 15px;
+  text-align: left;
+}
+
+th.view {
+  background-color: #ddd;
+  border: 1px solid #999;
+  padding: 15px;
+  text-align: left;
+}
+
+button.view {
+  border-style: solid;
+  padding: 8px;
+  border-width: 1px;
+}
+
+button.export {
+  border-style: solid;
+  background-color: #bbb;
+  padding: 8px;
+  border-width: 1px;
+}
+
+hr.rodape {
+	margin-bottom: 3%;
+}
+
+p.rodape {
+	margin-bottom: 3%;
+	text-align: right;
+}

@@ -12,6 +12,7 @@ import org.apache.hc.client5.http.entity.EntityBuilder
 import org.apache.hc.client5.http.classic.methods.HttpPost
 import org.apache.hc.client5.http.impl.classic.HttpClients
 import org.apache.hc.core5.http.ContentType
+import java.io.InputStream
 
 object ProductService {
 
@@ -88,7 +89,8 @@ object ProductService {
         val statusResponse = httpResponse.code
 
         val responseStatus = ResponseStatus.getResponseStatusByValue(statusResponse)
-        val responseMessage = entityResponse?.content.toString()
+        val inputStreamOfResponse = entityResponse?.content
+        val responseMessage = inputStreamToString(inputStreamOfResponse)
 
         var productList: Array<Product>? = null
 
@@ -103,5 +105,14 @@ object ProductService {
         } else {
             RestRequestResultFactory.createRestRequestResult(responseStatus, responseMessage)
         }
+    }
+
+    private fun inputStreamToString (inputStream: InputStream?) : String? {
+        if (inputStream == null) return null
+
+        val sizeOfByteArray = inputStream.available()
+        var stringBytes = ByteArray(sizeOfByteArray)
+        val sizeOfString = inputStream.read(stringBytes, 0, sizeOfByteArray)
+        return String(stringBytes, 0, sizeOfString)
     }
 }
